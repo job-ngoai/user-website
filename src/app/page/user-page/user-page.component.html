@@ -1,0 +1,1394 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>username</th>
+      <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="password">
+      <th mat-header-cell *matHeaderCellDef>password</th>
+      <td mat-cell *matCellDef="let element">{{ element.password }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="hasCheckpoint">
+      <th mat-header-cell *matHeaderCellDef>check point</th>
+      <td mat-cell *matCellDef="let element">{{ element.hasCheckpoint }}</td>
+    </ng-container>
+    <ng-container matColumnDef="ipAddress">
+      <th mat-header-cell *matHeaderCellDef>ipaddress</th>
+      <td mat-cell *matCellDef="let element">{{ element.ipAddress }}</td>
+    </ng-container>
+    <ng-container matColumnDef="cookie">
+      <th mat-header-cell *matHeaderCellDef>cookies</th>
+      <td mat-cell *matCellDef="let element">
+        <div [innerHTML]="element.cookie"></div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="createdTime">
+      <th mat-header-cell *matHeaderCellDef>time</th>
+      <td mat-cell *matCellDef="let element">{{ element.createdTime }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageIndex]="pageIndex"
+    [pageSize]="1"
+    [length]="totalPages"
+    #matpagination
+  ></mat-paginator>
+</div>
+
+<div>
+  <div id="re-wrap" class="re-disable">
+    <div
+      class="re-box re-box-row-ct"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(196px, 18px, 0px)"
+    >
+      Chủ tọa
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(85px, 510px, 0px)"
+    >
+      <div
+        id="seat-1231"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1231')"
+      >
+        J1
+      </div>
+      <div
+        id="seat-1232"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1232')"
+      >
+        J2
+      </div>
+      <div
+        id="seat-1233"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1233')"
+      >
+        J3
+      </div>
+      <div
+        id="seat-1234"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1234')"
+      >
+        J4
+      </div>
+      <div
+        id="seat-1235"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1235')"
+      >
+        J5
+      </div>
+      <div
+        id="seat-1236"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1236')"
+      >
+        J6
+      </div>
+      <div
+        id="seat-1246"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1246')"
+      >
+        J7
+      </div>
+      <div
+        id="seat-1247"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1247')"
+      >
+        J8
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(84px, 464px, 0px)"
+    >
+      <div
+        id="seat-1223"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1223')"
+      >
+        I1
+      </div>
+      <div
+        id="seat-1224"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1224')"
+      >
+        I2
+      </div>
+      <div
+        id="seat-1225"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1225')"
+      >
+        I3
+      </div>
+      <div
+        id="seat-1226"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1226')"
+      >
+        I4
+      </div>
+      <div
+        id="seat-1227"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1227')"
+      >
+        I5
+      </div>
+      <div
+        id="seat-1228"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1228')"
+      >
+        I6
+      </div>
+      <div
+        id="seat-1229"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1229')"
+      >
+        I7
+      </div>
+      <div
+        id="seat-1230"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1230')"
+      >
+        I8
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(84px, 416px, 0px)"
+    >
+      <div
+        id="seat-1214"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1214')"
+      >
+        H1
+      </div>
+      <div
+        id="seat-1215"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        H2
+      </div>
+      <div
+        id="seat-1216"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1216')"
+      >
+        H3
+      </div>
+      <div
+        id="seat-1217"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1217')"
+      >
+        H4
+      </div>
+      <div
+        id="seat-1218"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1218')"
+      >
+        H5
+      </div>
+      <div
+        id="seat-1219"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1219')"
+      >
+        H6
+      </div>
+      <div
+        id="seat-1220"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1220')"
+      >
+        H7
+      </div>
+      <div
+        id="seat-1221"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1221')"
+      >
+        H8
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(44px, 367px, 0px)"
+    >
+      <div
+        id="seat-1205"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1205')"
+      >
+        G1
+      </div>
+      <div
+        id="seat-1206"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1206')"
+      >
+        G2
+      </div>
+      <div
+        id="seat-1207"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        G3
+      </div>
+      <div
+        id="seat-1208"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1208')"
+      >
+        G4
+      </div>
+      <div
+        id="seat-1209"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        G5
+      </div>
+      <div
+        id="seat-1210"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1210')"
+      >
+        G6
+      </div>
+      <div
+        id="seat-1211"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1211')"
+      >
+        G7
+      </div>
+      <div
+        id="seat-1212"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1212')"
+      >
+        G8
+      </div>
+      <div
+        id="seat-1213"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1213')"
+      >
+        G9
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(45px, 320px, 0px)"
+    >
+      <div
+        id="seat-1196"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        F1
+      </div>
+      <div
+        id="seat-1197"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1197')"
+      >
+        F2
+      </div>
+      <div
+        id="seat-1198"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1198')"
+      >
+        F3
+      </div>
+      <div
+        id="seat-1199"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1199')"
+      >
+        F4
+      </div>
+      <div
+        id="seat-1200"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1200')"
+      >
+        F5
+      </div>
+      <div
+        id="seat-1201"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1201')"
+      >
+        F6
+      </div>
+      <div
+        id="seat-1202"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1202')"
+      >
+        F7
+      </div>
+      <div
+        id="seat-1203"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1203')"
+      >
+        F8
+      </div>
+      <div
+        id="seat-1204"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1204')"
+      >
+        F9
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(46px, 274px, 0px)"
+    >
+      <div
+        id="seat-1190"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        E1
+      </div>
+      <div
+        id="seat-1191"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1191')"
+      >
+        E2
+      </div>
+      <div
+        id="seat-1192"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1192')"
+      >
+        E3
+      </div>
+      <div
+        id="seat-1193"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1193')"
+      >
+        E4
+      </div>
+      <div
+        id="seat-1194"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1194')"
+      >
+        E5
+      </div>
+      <div
+        id="seat-1195"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1195')"
+      >
+        E6
+      </div>
+      <div
+        id="seat-1243"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1243')"
+      >
+        E7
+      </div>
+      <div
+        id="seat-1244"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1244')"
+      >
+        E8
+      </div>
+      <div
+        id="seat-1245"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1245')"
+      >
+        E9
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(47px, 225px, 0px)"
+    >
+      <div
+        id="seat-1181"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1181')"
+      >
+        D1
+      </div>
+      <div
+        id="seat-1182"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1182')"
+      >
+        D2
+      </div>
+      <div
+        id="seat-1183"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1183')"
+      >
+        D3
+      </div>
+      <div
+        id="seat-1184"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        D4
+      </div>
+      <div
+        id="seat-1185"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1185')"
+      >
+        D5
+      </div>
+      <div
+        id="seat-1186"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1186')"
+      >
+        D6
+      </div>
+      <div
+        id="seat-1187"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1187')"
+      >
+        D7
+      </div>
+      <div
+        id="seat-1188"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1188')"
+      >
+        D8
+      </div>
+      <div
+        id="seat-1189"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1189')"
+      >
+        D9
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(47px, 177px, 0px)"
+    >
+      <div
+        id="seat-1172"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1172')"
+      >
+        C1
+      </div>
+      <div
+        id="seat-1173"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1173')"
+      >
+        C2
+      </div>
+      <div
+        id="seat-1174"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1174')"
+      >
+        C3
+      </div>
+      <div
+        id="seat-1175"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1175')"
+      >
+        C4
+      </div>
+      <div
+        id="seat-1176"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1176')"
+      >
+        C5
+      </div>
+      <div
+        id="seat-1177"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1177')"
+      >
+        C6
+      </div>
+      <div
+        id="seat-1178"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1178')"
+      >
+        C7
+      </div>
+      <div
+        id="seat-1179"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1179')"
+      >
+        C8
+      </div>
+      <div
+        id="seat-1180"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1180')"
+      >
+        C9
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(48px, 125px, 0px)"
+    >
+      <div
+        id="seat-1163"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B1
+      </div>
+      <div
+        id="seat-1164"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B2
+      </div>
+      <div
+        id="seat-1165"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B3
+      </div>
+      <div
+        id="seat-1166"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B4
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(70px, 76px, 0px)"
+    >
+      <div
+        id="seat-1157"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        A1
+      </div>
+      <div
+        id="seat-1158"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        A2
+      </div>
+      <div
+        id="seat-1251"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1251')"
+      >
+        A3
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(250px, 124px, 0px)"
+    >
+      <div
+        id="seat-1167"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B5
+      </div>
+      <div
+        id="seat-1168"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B6
+      </div>
+      <div
+        id="seat-1169"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1169')"
+      >
+        B7
+      </div>
+      <div
+        id="seat-1170"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        B8
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(261px, 74px, 0px)"
+    >
+      <div
+        id="seat-1160"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        A4
+      </div>
+      <div
+        id="seat-1161"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        A5
+      </div>
+      <div
+        id="seat-1162"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        A6
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row-ct"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(600px, 20px, 0px)"
+    >
+      Chủ tọa
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(558px, 76px, 0px)"
+    >
+      <div
+        id="seat-1249"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        A1
+      </div>
+      <div
+        id="seat-1250"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        A2
+      </div>
+      <div
+        id="seat-1159"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        A3
+      </div>
+      <div
+        id="seat-1252"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        A4
+      </div>
+    </div>
+    <div
+      class="re-box re-box-col"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(515px, 123px, 0px)"
+    >
+      <div
+        id="seat-1285"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1285')"
+      >
+        J1
+      </div>
+      <div
+        id="seat-1286"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1286')"
+      >
+        J2
+      </div>
+      <div
+        id="seat-1237"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        K1
+      </div>
+      <div
+        id="seat-1238"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1238')"
+      >
+        K2
+      </div>
+      <div
+        id="seat-1239"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1239')"
+      >
+        K3
+      </div>
+      <div
+        id="seat-1240"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1240')"
+      >
+        K4
+      </div>
+      <div
+        id="seat-1241"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        K5
+      </div>
+      <div
+        id="seat-1242"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1242')"
+      >
+        K6
+      </div>
+    </div>
+    <div
+      class="re-box re-box-col"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(748px, 123px, 0px)"
+    >
+      <div
+        id="seat-1289"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1289')"
+      >
+        L1
+      </div>
+      <div
+        id="seat-1290"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        L2
+      </div>
+      <div
+        id="seat-1291"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1291')"
+      >
+        M1
+      </div>
+      <div
+        id="seat-1292"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        M2
+      </div>
+      <div
+        id="seat-1293"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1293')"
+      >
+        N1
+      </div>
+      <div
+        id="seat-1294"
+        class="re-seat"
+        draggable="true"
+        ondragstart="drag(event)"
+        onclick="SelectSeat(this, '1294')"
+      >
+        N2
+      </div>
+      <div
+        id="seat-1295"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        O1
+      </div>
+      <div
+        id="seat-1296"
+        class="re-seat seat-chose"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế khách chọn!"
+      >
+        O2
+      </div>
+    </div>
+    <div
+      class="re-box re-box-col"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(704px, 122px, 0px)"
+    >
+      <div
+        id="seat-1253"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        B1
+      </div>
+      <div
+        id="seat-1254"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        B2
+      </div>
+      <div
+        id="seat-1255"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        B3
+      </div>
+      <div
+        id="seat-1256"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        B4
+      </div>
+      <div
+        id="seat-1257"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        C1
+      </div>
+      <div
+        id="seat-1258"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        C2
+      </div>
+      <div
+        id="seat-1259"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        C3
+      </div>
+      <div
+        id="seat-1260"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        C4
+      </div>
+      <div
+        id="seat-1261"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        D1
+      </div>
+      <div
+        id="seat-1262"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        D2
+      </div>
+      <div
+        id="seat-1263"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        D3
+      </div>
+      <div
+        id="seat-1264"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        D4
+      </div>
+    </div>
+    <div
+      class="re-box re-box-col"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(562px, 123px, 0px)"
+    >
+      <div
+        id="seat-1269"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        F1
+      </div>
+      <div
+        id="seat-1270"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        F2
+      </div>
+      <div
+        id="seat-1271"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        F3
+      </div>
+      <div
+        id="seat-1272"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        F4
+      </div>
+      <div
+        id="seat-1273"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        G1
+      </div>
+      <div
+        id="seat-1274"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        G2
+      </div>
+      <div
+        id="seat-1275"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        G3
+      </div>
+      <div
+        id="seat-1277"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        H1
+      </div>
+      <div
+        id="seat-1278"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        H2
+      </div>
+      <div
+        id="seat-1279"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        H3
+      </div>
+      <div
+        id="seat-1280"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        H4
+      </div>
+      <div
+        id="seat-1281"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        I1
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(561px, 575px, 0px)"
+    >
+      <div
+        id="seat-1265"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        E1
+      </div>
+      <div
+        id="seat-1266"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        E2
+      </div>
+      <div
+        id="seat-1267"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        E3
+      </div>
+      <div
+        id="seat-1268"
+        class="re-seat seat-lock"
+        draggable="true"
+        ondragstart="drag(event)"
+        title="Ghế chủ tọa"
+      >
+        E4
+      </div>
+    </div>
+    <div
+      class="re-box re-box-row-ct-floor"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(68px, 2px, 0px)"
+    >
+      Tầng 5
+    </div>
+    <div
+      class="re-box re-box-row-ct-floor"
+      ondragover="allowDrop(event)"
+      ondrop="drop(event)"
+      style="transform: translate3d(480px, 2px, 0px)"
+    >
+      Tầng 6
+    </div>
+  </div>
+</div>
